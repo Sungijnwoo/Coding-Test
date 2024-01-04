@@ -16,7 +16,9 @@ jobs:
       - name: Putting data
         env:
           DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
-        run: echo $DATA > google-services.json
+        run: |
+          echo $DATA > google-services.json
+          cat google-services.json
       - name: save code test history
         run: |
           pip install --upgrade pip
