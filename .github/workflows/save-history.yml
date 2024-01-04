@@ -10,15 +10,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: create google api
-        run: |
-          touch google-service.json
-      - name: Putting data
-        env:
-          DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
-        run: |
-          echo $DATA > google-services.json
-          cat google-services.json
+      - name: create-json
+        id: create-json
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: "google-services.json"
+          json: ${{ secrets.GOOGLE_SERVICES_JSON }}
       - name: save code test history
         run: |
           pip install --upgrade pip
