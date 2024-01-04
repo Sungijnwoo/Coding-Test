@@ -13,4 +13,7 @@ jobs:
       - name: save code test history
         run: |
           pip install --upgrade pip
+          pip install --upgrade oauth2client 
+          pip install gspread
+          pip install PyOpenSSL
           python3 save_history.py ${{ github.actor }} ${{ github.event.head_commit.message }} ${{ github.sha  }}
