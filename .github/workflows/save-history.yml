@@ -13,4 +13,4 @@ jobs:
       - name: save code test history
         run: |
           pip install --upgrade pip
-          python3 save_history.py ${{ github.event.head_commit.message }}
+          python3 save_history.py ${{ github.event.head_commit.message }} ${{ github.sha  }}
