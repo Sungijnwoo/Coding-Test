@@ -10,10 +10,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: jsdaniell/create-json@v1.2.2
-        with:
-          name: "google-services.json"
-          json: ${{ secrets.GOOGLE_SERVICES_JSON }}
+      # - uses: jsdaniell/create-json@v1.2.2
+      #   with:
+      #     name: "google-services.json"
+      #     json: ${{ secrets.GOOGLE_SERVICES_JSON }}
       - name: save code test history
         run: |
           pip install --upgrade pip
