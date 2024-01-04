@@ -1,7 +1,7 @@
 import argparse
 import gspread
 from datetime import datetime
-import os
+
 
 def main(args):
     commit_message: str = args.commit_message
