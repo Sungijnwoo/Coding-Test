@@ -14,5 +14,6 @@ jobs:
         run: |
           pip install --upgrade pip
           python3 test.py
+          echo ${{ !contains(github.event.head_commit.message) }}
 
       
