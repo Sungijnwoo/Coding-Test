@@ -1,4 +1,4 @@
-data = input("number")
+data = input("")
 
 a, b = map(int, data.split(" "))
 
