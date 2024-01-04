@@ -1,6 +1,7 @@
 import argparse
 import gspread
 from datetime import datetime
+from pytz import timezone
 import os
 
 def main(args):
@@ -12,7 +13,7 @@ def main(args):
     site_address = f"https://www.acmicpc.net/problem/{problem_number}"
     commit_address = f"https://github.com/Sungijnwoo/Coding-Test/commit/{commit_number}"
     duration = float(duration)
-    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    current_time = datetime.now(timezone('Asia/Seoul')).strftime('%Y-%m-%d %H:%M:%S')
     gc = gspread.service_account(filename='google-services.json') # 수정됨
     sheet = gc.open_by_url('https://docs.google.com/spreadsheets/d/1k4sifuVCdUsaR_apfofK0gXaFud0UwjMoL-3xj1NwJE/edit#gid=0')
     worksheet = sheet.worksheet("history") # 이름으로 워크시트 선택
