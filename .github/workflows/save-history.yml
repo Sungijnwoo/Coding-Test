@@ -10,9 +10,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: create-json
-        id: create-json
-        uses: jsdaniell/create-json@1.1.2
+      - uses: jsdaniell/create-json@1.1.2
         with:
           name: "google-services.json"
           json: ${{ secrets.GOOGLE_SERVICES_JSON }}
