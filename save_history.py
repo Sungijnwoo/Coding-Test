@@ -22,10 +22,10 @@ def main(args):
         sheet.add_worksheet(user_name, rows=1000, cols=5)
         worksheet = sheet.worksheet(f"{user_name}") # 이름으로 워크시트 선택
         worksheet.update_cell(1, 1, "User")
-        worksheet.update_cell(1, 1, "Address")
-        worksheet.update_cell(1, 1, "Commit")
-        worksheet.update_cell(1, 1, "Duration(h)")
-        worksheet.update_cell(1, 1, "Time")        
+        worksheet.update_cell(1, 2, "Address")
+        worksheet.update_cell(1, 3, "Commit")
+        worksheet.update_cell(1, 4, "Duration(h)")
+        worksheet.update_cell(1, 5, "Time")        
     else:
         worksheet = sheet.worksheet(f"{user_name}") # 이름으로 워크시트 선택
     start_row = len(worksheet.col_values(1)) + 1
