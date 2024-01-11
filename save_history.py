@@ -16,16 +16,16 @@ def main(args):
     current_time = datetime.now(timezone('Asia/Seoul')).strftime('%Y-%m-%d %H:%M:%S')
     gc = gspread.service_account(filename='google-services.json') # 수정됨
     sheet = gc.open_by_url('https://docs.google.com/spreadsheets/d/1k4sifuVCdUsaR_apfofK0gXaFud0UwjMoL-3xj1NwJE/edit#gid=0')
-
-    worksheet_list = sheet.worksheets()
+    
+    worksheet_list = [i.title for i in sheet.worksheets()]
     if user_name not in worksheet_list:
         sheet.add_worksheet(user_name, rows=1000, cols=5)
         worksheet = sheet.worksheet(f"{user_name}") # 이름으로 워크시트 선택
-        worksheet.update_cell(start_row, 1, "User")
-        worksheet.update_cell(start_row, 1, "Address")
-        worksheet.update_cell(start_row, 1, "Commit")
-        worksheet.update_cell(start_row, 1, "Duration(h)")
-        worksheet.update_cell(start_row, 1, "Time")        
+        worksheet.update_cell(1, 1, "User")
+        worksheet.update_cell(1, 1, "Address")
+        worksheet.update_cell(1, 1, "Commit")
+        worksheet.update_cell(1, 1, "Duration(h)")
+        worksheet.update_cell(1, 1, "Time")        
     else:
         worksheet = sheet.worksheet(f"{user_name}") # 이름으로 워크시트 선택
     start_row = len(worksheet.col_values(1)) + 1
