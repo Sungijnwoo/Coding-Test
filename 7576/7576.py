@@ -20,6 +20,7 @@ def main():
                 print(-1)
                 return
     print(result - 1)
+    
 
 def bfs(nominate_pos, graph):
     move_direct = [[1, 0], [-1, 0], [0, 1], [0, -1]]
