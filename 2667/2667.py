@@ -16,6 +16,7 @@ def main():
     print(len(result))
     for count in result:
         print(count)
+        
     
 
 def bfs(i, j, graph, visited):
